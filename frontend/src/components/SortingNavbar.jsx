@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 
-const SortingNavbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-  
+const SortingNavbar = () => {  
     const navLinks = [
       { to: '/sorting/bubblesort', label: 'Bubblesort' },
       { to: '/sorting/selectionsort', label: 'Selectionsort' },
       { to: '/sorting/insertionsort', label: 'Insertionsort' }
     ];
   
-    const toggleMenu = () => setIsOpen(!isOpen);
-    const closeMenu = () => setIsOpen(false);
   
     return (
       <header className=" w-full text-indigo-700 shadow-md">
@@ -21,7 +17,6 @@ const SortingNavbar = () => {
               <NavLink
                 key={link.to}
                 to={link.to}
-                onClick={closeMenu}
                 className={({isActive}) =>
                   `text-sm font-medium p-3 rounded-md hover:bg-gray-200 hover:text-indigo-700 transition-colors ${isActive && 'bg-slate-300'}`
                 }
