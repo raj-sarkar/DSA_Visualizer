@@ -9,7 +9,7 @@ const Navbar = () => {
   const navLinks = [
     { to: '/', label: 'Home' , active:'/' },
     { to: '/sorting/bubblesort', label: 'Sorting' , active:'/sorting' },
-    { to: '/searching', label: 'Searching' , active:'/searching' },
+    { to: '/searching/linearsearch', label: 'Searching' , active:'/searching' },
     { to: '/graph', label: 'Graph' , active:'/graph' }
   ];
 
@@ -51,8 +51,8 @@ const Navbar = () => {
               onClick={closeMenu}
               className={() =>
                 `text-sm font-medium p-3 rounded-md hover:bg-gray-200 hover:text-indigo-700 transition-colors 
-                ${link.label!=='Home' && location.pathname.startsWith(link.active) && 'bg-indigo-700'}
-                ${link.label==='Home' && location.pathname===link.active && 'bg-indigo-700'}
+                ${link.label!=='Home' && location.pathname.startsWith(link.active) ? 'bg-indigo-700' : ''}
+                ${link.label==='Home' && location.pathname===link.active ? 'bg-indigo-700' : ''}
                 `
               }
             >

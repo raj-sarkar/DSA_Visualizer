@@ -102,7 +102,7 @@ const InsertionSort = () => {
         <SpeedBar setSpeed={setSpeed} />
       </div>
       <div className="flex flex-col sm:flex-row justify-around">
-        <CustomArray setArray={setArray} />
+        <CustomArray setArray={setArray} disabled={sorting}/>
         <CodeBlock code={code} />
       </div>
     </div>

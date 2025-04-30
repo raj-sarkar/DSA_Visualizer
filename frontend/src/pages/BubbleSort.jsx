@@ -68,7 +68,7 @@ function bubbleSort(arr) {
               transition={{ duration: '0.4', ease: 'easeInOut' }}
               className={`w-10 text-black text-md font-bold flex justify-center items-end 
               ${highlight.includes(bar.id) ? 'bg-green-700' : 'bg-indigo-200'}
-              ${fixed.includes(bar.id) && 'bg-orange-400'}`}
+              ${fixed.includes(bar.id) ? 'bg-orange-400' : ''}`}
               style={{ height: `${bar.value * 5}px` }}
             >
               {bar.value}
@@ -88,7 +88,7 @@ function bubbleSort(arr) {
         <SpeedBar setSpeed={setSpeed}/>
       </div>
       <div className="flex flex-col sm:flex-row justify-around">
-        <CustomArray setArray={setArray} />
+        <CustomArray setArray={setArray} disabled={sorting} />
         <CodeBlock code={code}/>
       </div>
     </div>

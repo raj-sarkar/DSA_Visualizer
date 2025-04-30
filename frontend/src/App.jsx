@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import BubbleSort from './pages/BubbleSort'
 import SelectionSort from './pages/SelectionSort'
 import InsertionSort from './pages/InsertionSort'
+import LinearSearch from './pages/LinearSearch'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/sorting/bubblesort' element={<BubbleSort />} />
         <Route path='/sorting/selectionsort' element={<SelectionSort />} />
         <Route path='/sorting/insertionsort' element={<InsertionSort />} />
+        <Route path='/searching/linearsearch' element={<LinearSearch />} />
         {/* <Route path='/speed' element={<SpeedBar/>} /> */}
       </Routes>
     </div>

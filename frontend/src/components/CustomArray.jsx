@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CustomArray = ({ setArray }) => {
+const CustomArray = ({ setArray, withId = true, disabled, withKey = false, setKey }) => {
 
     const [n, setN] = useState(5)
     const [error, setError] = useState("")
@@ -9,7 +9,10 @@ const CustomArray = ({ setArray }) => {
     const generateArray = () => {
         const a = []
         for (let i = 0; i < n; i++) {
-            a.push({ id: i, value: Math.floor(Math.random() * 50) })
+            if (withId)
+                a.push({ id: i, value: Math.floor(Math.random() * 50) })
+            else
+                a.push(Math.floor(Math.random() * 50))
         }
         setArray([])
         setArray([...a])
@@ -22,11 +25,20 @@ const CustomArray = ({ setArray }) => {
             return
         }
 
-        const arr = values.map((value, idx) => ({ id: idx, value }))
+        const arr = values.map((value, idx) => (withId ? { id: idx, value } : value))
         setArray(arr)
     }
     return (
         <div className="p-4 px-10">
+            {withKey && 
+            <div className="flex flex-col w-[250px] max-w-md m-auto sm:m-0">
+                <label className=" font-medium block text-slate-600">Enter key</label>
+                <input
+                    className="focus:outline-none rounded p-2 shadow-sm focus:shadow-slate-400 "
+                    placeholder="10"
+                    onChange={(e) => setKey(e.target.value)}
+                />
+            </div>}
             <div className="flex flex-col sm:flex-row gap-4 items-center">
                 <div className="w-[250px] max-w-sm relative mt-4">
                     <label className="block mb-1  text-slate-600 font-medium">Enter number of elements</label>
@@ -77,8 +89,9 @@ const CustomArray = ({ setArray }) => {
                     </p>
                 </div>
                 <button
-                    className="bg-indigo-400 hover:bg-indigo-500 rounded h-fit p-2 mt-4 cursor-pointer"
+                    className={` hover:bg-indigo-500 rounded h-fit p-2 mt-4 cursor-pointer ${disabled ? 'bg-slate-300 pointer-events-none' : 'bg-indigo-400'}`}
                     onClick={generateArray}
+                    disabled={disabled}
                 >
                     Random
                 </button>
