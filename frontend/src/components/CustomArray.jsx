@@ -30,15 +30,18 @@ const CustomArray = ({ setArray, withId = true, disabled, withKey = false, setKe
     }
     return (
         <div className="p-4 px-10">
-            {withKey && 
-            <div className="flex flex-col w-[250px] max-w-md m-auto sm:m-0">
-                <label className=" font-medium block text-slate-600">Enter key</label>
-                <input
-                    className="focus:outline-none rounded p-2 shadow-sm focus:shadow-slate-400 "
-                    placeholder="10"
-                    onChange={(e) => setKey(e.target.value)}
-                />
-            </div>}
+            {withKey &&
+                <div className="flex flex-col w-[250px] max-w-md m-auto sm:m-0">
+                    <label className=" font-medium block text-slate-600">Enter key</label>
+                    <input
+                        className="focus:outline-none rounded p-2 shadow-sm focus:shadow-slate-400 "
+                        placeholder="eg. 10"
+                        onChange={(e) => {
+                            if(!e.target.value)setKey(0)
+                            else setKey(e.target.value)
+                        }}
+                    />
+                </div>}
             <div className="flex flex-col sm:flex-row gap-4 items-center">
                 <div className="w-[250px] max-w-sm relative mt-4">
                     <label className="block mb-1  text-slate-600 font-medium">Enter number of elements</label>
@@ -101,7 +104,7 @@ const CustomArray = ({ setArray, withId = true, disabled, withKey = false, setKe
                     <label className=" font-medium block text-slate-600">Enter custom array</label>
                     <input
                         className="max-w-md focus:outline-none rounded p-2 shadow-sm focus:shadow-slate-400 "
-                        placeholder="2,5,1,3,4"
+                        placeholder="eg. 2,5,1,3,4"
                         onChange={(e) => setCustomArrayInput(e.target.value)}
                     />
                     <span className="text-red-500 text-xs mt-2">{error}</span>

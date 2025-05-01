@@ -18,17 +18,18 @@ const LinearSearch = () => {
     useEffect(() => {
         setHighlight(-1)
         setAnswer(-1)
+        setStep('Step')
     }, [array,key])
 
     const code =
         `
 function linearSearch(array,key){
-const n=array.length;
-for(let i=0;i<n;i++){
-    if(array[i]==key)
-        return i;
-}
-return -1;
+    const n=array.length;
+    for(let i=0;i<n;i++){
+        if(array[i]==key)
+            return i;
+    }
+    return -1;
 }
 `
     const linearSearch = async () => {
@@ -57,7 +58,11 @@ return -1;
             <SearchingNavbar />
             <div className="flex flex-col items-center mt-5 ">
                 <span className='border-b border-indigo-400 p-2 text-2xl text-indigo-700'>{step}</span>
-                <div className="flex gap-2 h-40 items-end">
+                <div className='flex flex-row items-center gap-2 m-2 p-2'>
+                    <span className='font-medium block text-slate-600'>Key : </span>
+                    <div className='bg-indigo-300 p-2 px-4 font-bold text-md'>{key}</div>
+                </div>
+                <div className="flex gap-2 h-30 items-end">
                     {array.map((value, idx) => (
                         <motion.div
                             key={idx}

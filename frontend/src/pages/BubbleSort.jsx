@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CustomArray from "../components/CustomArray";
 import CodeBlock from "../components/CodeBlock";
@@ -18,6 +18,11 @@ const BubbleSort = () => {
     { id: 3, value: 10 },
     { id: 4, value: 25 },
   ]);
+
+  useEffect(()=>{
+    setStep('Step')
+  },[array])
+  
   const code = `
 function bubbleSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {

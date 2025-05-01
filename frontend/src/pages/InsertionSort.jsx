@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SortingNavbar from '../components/SortingNavbar'
 import CustomArray from '../components/CustomArray'
 import CodeBlock from '../components/CodeBlock'
@@ -19,6 +19,9 @@ const InsertionSort = () => {
     { id: 3, value: 10 },
     { id: 4, value: 25 },
   ]);
+  useEffect(()=>{
+      setStep('Step')
+    },[array])
   const code = `
     function insertionSort(arr) {
       let n = arr.length;
