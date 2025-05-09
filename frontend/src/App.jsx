@@ -11,6 +11,7 @@ import InsertionSort from './pages/InsertionSort'
 import LinearSearch from './pages/LinearSearch'
 import BinarySearch from './pages/BinarySearch'
 import BreadthFirstSearch from './pages/BreadthFirstSearch'
+import DepthFirstSearch from './pages/DepthFirstSearch'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/searching/linearsearch' element={<LinearSearch />} />
         <Route path='/searching/binarysearch' element={<BinarySearch />} />
         <Route path='/graph/bfs' element={<BreadthFirstSearch/> } />
+        <Route path='/graph/dfs' element={<DepthFirstSearch/> } />
         {/* <Route path='/demo' element={<Demo/>} /> */}
       </Routes>
     </div>

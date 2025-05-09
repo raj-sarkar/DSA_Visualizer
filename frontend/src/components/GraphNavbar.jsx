@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-const SearchingNavbar = () => {
+const GraphNavbar = () => {
     const navLinks = [
-        { to: '/searching/linearsearch', label: 'Linearsearch' },
-        { to: '/searching/binarysearch', label: 'Binarysearch' },
+        { to: '/graph/bfs', label: 'breadth-first-search'},
+        { to: '/graph/dfs', label: 'depth-first-search'}
       ];
     
     
@@ -29,4 +29,4 @@ const SearchingNavbar = () => {
       );
 }
 
-export default SearchingNavbar
+export default GraphNavbar
