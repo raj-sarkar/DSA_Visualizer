@@ -41,7 +41,7 @@ function binarySearch(array,key){
     return -1;
 }
     `
-    const sleep = () => new Promise((res) => setInterval(res, speed))
+    const sleep = () => new Promise((res) => setTimeout(res, speed))
 
     const binarySearch = async () => {
         setDisabled(true)

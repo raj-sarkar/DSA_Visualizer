@@ -10,7 +10,7 @@ const Navbar = () => {
     { to: '/', label: 'Home' , active:'/' },
     { to: '/sorting/bubblesort', label: 'Sorting' , active:'/sorting' },
     { to: '/searching/linearsearch', label: 'Searching' , active:'/searching' },
-    { to: '/graph', label: 'Graph' , active:'/graph' }
+    { to: '/graph/bfs', label: 'Graph' , active:'/graph' }
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);

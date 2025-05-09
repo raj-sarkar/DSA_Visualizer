@@ -10,6 +10,7 @@ import SelectionSort from './pages/SelectionSort'
 import InsertionSort from './pages/InsertionSort'
 import LinearSearch from './pages/LinearSearch'
 import BinarySearch from './pages/BinarySearch'
+import BreadthFirstSearch from './pages/BreadthFirstSearch'
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
         <Route path='/sorting/insertionsort' element={<InsertionSort />} />
         <Route path='/searching/linearsearch' element={<LinearSearch />} />
         <Route path='/searching/binarysearch' element={<BinarySearch />} />
-        {/* <Route path='/speed' element={<SpeedBar/>} /> */}
+        <Route path='/graph/bfs' element={<BreadthFirstSearch/> } />
+        {/* <Route path='/demo' element={<Demo/>} /> */}
       </Routes>
     </div>
   )

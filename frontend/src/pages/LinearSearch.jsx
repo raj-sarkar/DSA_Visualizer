@@ -38,10 +38,10 @@ function linearSearch(array,key){
         for (let i = 0; i < n; i++) {
             setStep(`Comparing key(${key}) with index ${i}`)
             setHighlight(i)
-            await new Promise((res) => setInterval(res, speed))
+            await new Promise((res) => setTimeout(res, speed))
             if (array[i] == key) {
                 setAnswer(i)
-                await new Promise((res) => setInterval(res, speed))
+                await new Promise((res) => setTimeout(res, speed))
                 setStep(`Key(${key}) is present at index ${i}`)
                 setDisabled(false)
                 return
