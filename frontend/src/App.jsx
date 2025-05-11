@@ -29,7 +29,6 @@ function App() {
         <Route path='/searching/binarysearch' element={<BinarySearch />} />
         <Route path='/graph/bfs' element={<BreadthFirstSearch/> } />
         <Route path='/graph/dfs' element={<DepthFirstSearch/> } />
-        {/* <Route path='/demo' element={<Demo/>} /> */}
       </Routes>
     </div>
   )

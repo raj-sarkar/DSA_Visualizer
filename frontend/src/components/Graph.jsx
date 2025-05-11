@@ -49,7 +49,7 @@ const Graph = ({ nodes, setNodes, edges, setEdges, visitedNodes, seen, current }
                             <option key={node.id} value={node.id}>{node.id}</option>
                         ))}
                     </select>
-                    <button onClick={addEdge} className="px-4 py-2 bg-green-500 text-white rounded cursor-pointer">
+                    <button onClick={addEdge} className="px-4 py-2 bg-green-600 text-white rounded cursor-pointer">
                         Add Edge
                     </button>
                 </div>
