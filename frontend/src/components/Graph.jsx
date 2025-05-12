@@ -55,6 +55,26 @@ const Graph = ({ nodes, setNodes, edges, setEdges, visitedNodes, seen, current }
                 </div>
             </div>
 
+            <div className='flex flex-wrap gap-2'>
+                <div className='flex flex-row w-fit items-center gap-1'>
+                        <span className='w-[20px] h-[20px] bg-indigo-400 rounded-full'></span>
+                        <span>Node</span>
+                </div>
+                <div className='flex flex-row w-fit items-center gap-1'>
+                        <span className='w-[20px] h-[20px] bg-red-700 rounded-full'></span>
+                        <span>Current Node</span>
+                </div>
+                <div className='flex flex-row w-fit items-center gap-1'>
+                        <span className='w-[20px] h-[20px] bg-green-700 rounded-full'></span>
+                        <span>Adjacent Node</span>
+                </div>
+                <div className='flex flex-row w-fit items-center gap-1'>
+                        <span className='w-[20px] h-[20px] bg-orange-400 rounded-full'></span>
+                        <span>Traversed Node</span>
+                </div>
+
+            </div>
+
             <div className="relative w-full h-full rounded bg-gray-100 overflow-hidden border-2 border-slate-300">
                 {edges.map((edge, i) => {
                     const fromNode = nodes.find((n) => n.id === edge.from);
@@ -117,7 +137,7 @@ const Graph = ({ nodes, setNodes, edges, setEdges, visitedNodes, seen, current }
                         <div
                             ref={nodeRef}
                             className={`absolute w-10 h-10 flex items-center justify-center text-white rounded-full shadow      cursor-move
-                            ${seen.includes(node.id) ? 'bg-green-700' : ' bg-blue-400'}
+                            ${seen.includes(node.id) ? 'bg-green-700' : ' bg-indigo-400'}
                             ${current == node.id ? 'bg-red-700' : ''}
                             ${visitedNodes.includes(node.id) ? 'bg-orange-400' : ''}
 
