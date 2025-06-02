@@ -18,6 +18,7 @@ const Graph = ({ nodes, setNodes, edges, setEdges, visitedNodes, seen, current }
 
     const addEdge = () => {
         if (selected.from !== "" && selected.to !== "") {
+            if(selected.from===selected.to)return
             setEdges([...edges, { from: Number(selected.from), to: Number(selected.to) }]);
         }
     };
